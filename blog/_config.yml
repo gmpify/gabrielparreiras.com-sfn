@@ -1,0 +1,18 @@
+title: Gabriel Parreiras
+email: gab.parreiras@gmail.com
+description: >-
+  DevOps Engineer
+baseurl: ""
+url: "https://gabrielparreiras.com"
+
+github_username: gmpify
+linkedin_username: gparreiras
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+exclude:
+   - Gemfile
+   - Gemfile.lock
