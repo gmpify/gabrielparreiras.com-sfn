@@ -66,8 +66,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.8.1)
-  jekyll-feed (~> 0.6)
-  minima (~> 2.0)
+  minima (~> 2.5)
 
 BUNDLED WITH
    1.16.0
