@@ -3,14 +3,16 @@ SparkleFormation.new(:blog, :provider => :aws) do
 
   parameters do
     bucket_name.type 'String'
+    error_document.type 'String'
+    index_document.type 'String'
   end
 
   dynamic!(:s3_bucket, :blog) do
     properties do
       bucket_name ref!(:bucket_name)
       website_configuration do
-        error_document '404.html'
-        index_document 'index.html'
+        error_document ref!(:error_document)
+        index_document ref!(:index_document)
       end
     end
   end
