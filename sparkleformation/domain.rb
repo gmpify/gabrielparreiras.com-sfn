@@ -10,4 +10,8 @@ SparkleFormation.new(:domain, :provider => :aws) do
       name ref!(:domain_name)
     end
   end
+
+  outputs do
+    domain_hosted_zone_id.value ref!(:domain_route53_hosted_zone)
+  end
 end
