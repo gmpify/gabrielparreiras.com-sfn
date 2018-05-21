@@ -10,7 +10,7 @@ SparkleFormation.new(:blog, :provider => :aws) do
 
   mappings.s3_website_endpoint do
     set!('us-east-1'._no_hump,
-      :website_endpoint => 's3-website.us-east-1.amazonaws.com',
+      :website_endpoint => 's3-website-us-east-1.amazonaws.com',
       :hosted_zone_id => 'Z3AQBSTGFYJSTF'
     )
   end
