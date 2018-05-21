@@ -10,7 +10,7 @@ SparkleFormation.new(:blog, :provider => :aws) do
 
   mappings.s3_website_endpoint do
     set!('us-east-1'._no_hump,
-      :website_endpoint => 's3-website-us-east-1.amazonaws.com',
+      :website_endpoint => 's3-website.us-east-1.amazonaws.com',
       :hosted_zone_id => 'Z3AQBSTGFYJSTF'
     )
   end
@@ -46,7 +46,7 @@ SparkleFormation.new(:blog, :provider => :aws) do
   dynamic!(:route53_record_set, :blog) do
     properties do
       alias_target do
-        d_n_s_name join!([ref!(:bucket_name), map!(:s3_website_endpoint, 'us-east-1', :website_endpoint)], options: {delimiter: '.'})
+        d_n_s_name map!(:s3_website_endpoint, 'us-east-1', :website_endpoint)
         hosted_zone_id map!(:s3_website_endpoint, 'us-east-1', :hosted_zone_id)
       end
       hosted_zone_id ref!(:domain_hosted_zone_id)
